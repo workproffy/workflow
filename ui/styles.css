@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: sans-serif;
+    color: darkgray;
+}
+
+body{
+    background-color: aliceblue;
+}
