@@ -19,7 +19,6 @@ app.get('/main.js', (req,res) => {
     res.sendFile(path.join(__dirname,'ui','main.js'));
 });
 
-
 app.listen(port, () => {
     console.log(`Server is now running on port ${port}!!!`);
 });
