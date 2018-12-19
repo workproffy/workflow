@@ -47,3 +47,6 @@ Steps to run on local machine :
 	1. Just fire the following command in the root (make sure you read through the docker-compose.yml file for understanding) : 
 
 		docker-compose up -d
+		
+		Now head to localhost:8000 , you should be able to view adminer console in the browser.
+
