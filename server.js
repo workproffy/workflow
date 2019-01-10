@@ -34,17 +34,21 @@ app.get('/main.js', (req,res) => {
     res.sendFile(path.join(__dirname,'ui','main.js'));
 });
 
-// To register a user (cleaner/owner)
+// To register a user (cleaner/owner) through Firebase Google Sign in
 app.post('/register', (req,res) => {
-    let username = req.body.username;
-    let password = req.body.password;
-    pool.query('INSERT INTO "login" (user,pass) VALUES ($1,$2)', [username,password], (err, result) =>{
-        if(err){
-            res.status(500).send(err.toString());
-        }else{
-            res.send("REGISTERED");
-        }
-    });
+    // let username = req.body.username;
+    // let password = req.body.password;
+
+    
+
+
+    // pool.query('INSERT INTO "login" (user,pass) VALUES ($1,$2)', [username,password], (err, result) =>{
+    //     if(err){
+    //         res.status(500).send(err.toString());
+    //     }else{
+    //         res.send("REGISTERED");
+    //     }
+    // });
 });
 
 // To login a user (cleaner/owner)
@@ -52,15 +56,19 @@ app.post('/login', (req,res) => {
     res.send("LOGGED IN");
 });
 
-// To logout a user (cleaner/owner)
+// To logout a user (cleaner/owner) through Google Sign out
 app.get('/logout', (req,res) => {
     res.send("LOGGED OUT");
 });
 
+// Firebase Playground
+app.get('/firebase', (req,res) => {
+    res.sendFile(path.join(__dirname,'ui','firebase.html'));
+});
 
-
-
-
+app.get('/firebase.js', (req,res) => {
+    res.sendFile(path.join(__dirname,'ui','firebase.js'));
+});
 
 app.listen(port, () => {
     console.log(`Server is now running on port ${port}!!!`);
